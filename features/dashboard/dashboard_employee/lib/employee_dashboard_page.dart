@@ -1,6 +1,6 @@
 import 'package:core_router/app_routes.dart';
+import 'package:core_router/navigation_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class EmployeeDashboardPage extends StatelessWidget {
   const EmployeeDashboardPage({super.key});
@@ -19,7 +19,11 @@ class EmployeeDashboardPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => context.push(AppRoutes.employee.profile),
+              onPressed:
+                  () => NavigationStack().push(
+                    context,
+                    AppRoutes.employee.profile,
+                  ),
               child: const Text('Go to Profile'),
             ),
           ],

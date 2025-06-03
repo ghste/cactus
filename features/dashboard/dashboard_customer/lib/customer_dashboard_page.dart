@@ -1,7 +1,7 @@
 // packages/feature_dashboard_customer/lib/src/view/customer_dashboard_page.dart
 import 'package:core_router/app_routes.dart';
+import 'package:core_router/navigation_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CustomerDashboardPage extends StatelessWidget {
   const CustomerDashboardPage({super.key});
@@ -20,7 +20,11 @@ class CustomerDashboardPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => context.push(AppRoutes.customer.profile),
+              onPressed:
+                  () => NavigationStack().push(
+                    context,
+                    AppRoutes.customer.profile,
+                  ),
               child: const Text('Go to Profile'),
             ),
           ],
