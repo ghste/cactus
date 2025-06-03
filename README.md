@@ -61,19 +61,19 @@ This project follows a **modular structure**—each “feature” lives in its o
 
 ### Folder structure
 
-cactus/
-├── features/
-│   ├── core_ui/                    # UI elements, page transitions, animations for iOS, Android, and Web conventions
-│   ├── core_router/                # Routes, NavigationStack, AppRoutes
-│   ├── feature_auth/               # AuthService, LoginPage, NotFoundPage
-│   └── dashboard/                  
-│       ├── dashboard_vendor/       # VendorDashboardPage, VendorSettingsPage
-│       ├── dashboard_customer/     # CustomerHomePage
-│       └── dashboard_employee/     # EmployeeProfilePage
-├── lib/
-│   └── main.dart                   # Calls initAuthService(), sets up GoRouter
-├── pubspec.yaml
-└── README.md
+- **cactus/**
+  - **features/**
+    - **core_ui/** - UI elements, page transitions, animations for iOS, Android, and Web conventions
+    - **core_router/** - Routes, NavigationStack, AppRoutes
+    - **feature_auth/** - AuthService, LoginPage, NotFoundPage
+    - **dashboard/**
+      - **dashboard_vendor/** - VendorDashboardPage, VendorSettingsPage
+      - **dashboard_customer/** - CustomerHomePage
+      - **dashboard_employee/** - EmployeeProfilePage
+  - **lib/**
+    - **main.dart** - Calls initAuthService(), sets up GoRouter
+  - **pubspec.yaml**
+  - **README.md**
 
 Each of these folders is effectively its own mini-app (often called a “package” or “feature module”) with its own:
 
