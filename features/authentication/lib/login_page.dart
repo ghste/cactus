@@ -22,23 +22,25 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             const Text('Select a user type to log in as:'),
             const SizedBox(height: 16),
-            RadioListTile<UserType>(
-              title: const Text('Vendor'),
-              value: UserType.vendor,
+            RadioGroup<UserType>(
               groupValue: _selectedType,
-              onChanged: (val) => setState(() => _selectedType = val),
-            ),
-            RadioListTile<UserType>(
-              title: const Text('Employee'),
-              value: UserType.employee,
-              groupValue: _selectedType,
-              onChanged: (val) => setState(() => _selectedType = val),
-            ),
-            RadioListTile<UserType>(
-              title: const Text('Customer'),
-              value: UserType.customer,
-              groupValue: _selectedType,
-              onChanged: (val) => setState(() => _selectedType = val),
+              onChanged: (UserType? val) => setState(() => _selectedType = val),
+              child: Column(
+                children: [
+                  RadioListTile<UserType>(
+                    title: const Text('Vendor'),
+                    value: UserType.vendor,
+                  ),
+                  RadioListTile<UserType>(
+                    title: const Text('Employee'),
+                    value: UserType.employee,
+                  ),
+                  RadioListTile<UserType>(
+                    title: const Text('Customer'),
+                    value: UserType.customer,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 24),
             ElevatedButton(

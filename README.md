@@ -31,9 +31,9 @@ Cactus Inc. Dashboard App is built in Flutter using a **feature-module** approac
   - Stores user type (vendor/customer/employee) in local storage (SharedPreferences) so you stay logged in across page reloads on web or app restarts on mobile.
 
 - **Role-Based Dashboards**  
-  - **Vendor Dashboard**: View cactus inventory.  
-  - **Customer Home**: Browse cactus catalog.
-  - **Employee Profile**: Update your profile.
+  - **Vendor Dashboard**
+  - **Customer Home**
+  - **Employee Profile**
 
 - **NavigationStack Helper**  
   - On **Web**: records URL history, uses `context.go(...)` to update address bar, and custom back logic.  
@@ -43,8 +43,8 @@ Cactus Inc. Dashboard App is built in Flutter using a **feature-module** approac
 
 ## Architecture
 
-This project follows a **modular structure**—each “feature” lives in its own package 
- 
+This project uses a modular architecture, where each feature is isolated into its own package.
+
 ---
 
 ## Getting Started
@@ -99,7 +99,7 @@ Each of these folders is effectively its own mini-app (often called a “package
 
 #### Scalability & Maintenance
 
-- As the app grows, we simply add more feature folders. We avoid a monolithic `lib/` folder where everything lives—such a monolith often becomes unwieldy as the number of screens, services, and widgets grows.
+- As the application grows, we keep things organized by adding new feature modules instead of letting everything accumulate in one large lib/ folder.
 - When a module becomes too large, we can split it into sub-modules or extract shared code into a separate package (for example, a “shared networking” or “storage” module).
 
 #### Clear Dependency Graph
