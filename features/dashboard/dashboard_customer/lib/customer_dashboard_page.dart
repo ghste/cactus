@@ -14,18 +14,27 @@ class CustomerDashboardPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Welcome, Customer! \n  Message from Cactus Inc: \nOur cacti stay alive better than you 🌵😎🌵🌵🌵',
-              textAlign: TextAlign.center,
+            Semantics(
+              header: true,
+              label:
+                  'Welcome customer. Message from Cactus Inc: Our cacti stay alive better than you.',
+              child: Text(
+                'Welcome, Customer! \n  Message from Cactus Inc: \nOur cacti stay alive better than you 🌵😎🌵🌵🌵',
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed:
-                  () => NavigationStack().push(
-                    context,
-                    AppRoutes.customer.profile,
-                  ),
-              child: const Text('Go to Profile'),
+            Semantics(
+              button: true,
+              label: 'Go to customer profile',
+              child: ElevatedButton(
+                onPressed:
+                    () => NavigationStack().push(
+                      context,
+                      AppRoutes.customer.profile,
+                    ),
+                child: const Text('Go to Profile'),
+              ),
             ),
           ],
         ),

@@ -12,6 +12,7 @@ class VendorSettingsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Vendor Settings'),
         leading: IconButton(
+          tooltip: 'Back',
           icon: const Icon(Icons.arrow_back),
           onPressed: () => NavigationStack().back(context),
         ),
@@ -20,19 +21,27 @@ class VendorSettingsPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'Settings for Vendor here. \nHere\'s more cacti 🌵🌵🌵🌵🌵🌵🌵🌵',
-              textAlign: TextAlign.center,
+            Semantics(
+              label:
+                  'Settings for vendor. Decorative cactus emojis shown below.',
+              child: Text(
+                'Settings for Vendor here. \nHere\'s more cacti 🌵🌵🌵🌵🌵🌵🌵🌵',
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                // Log out in AuthService (also clears prefs)
-                authService.logout();
-                // Send user back to the login screen
-                NavigationStack().go(context, AppRoutes.login);
-              },
-              child: const Text('Logout'),
+            Semantics(
+              button: true,
+              label: 'Log out',
+              child: ElevatedButton(
+                onPressed: () async {
+                  // Log out in AuthService (also clears prefs)
+                  authService.logout();
+                  // Send user back to the login screen
+                  NavigationStack().go(context, AppRoutes.login);
+                },
+                child: const Text('Logout'),
+              ),
             ),
           ],
         ),

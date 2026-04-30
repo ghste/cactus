@@ -13,18 +13,26 @@ class EmployeeDashboardPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Welcome, Employee! \nWorking here is like being a cactus 🌵😅',
-              textAlign: TextAlign.center,
+            Semantics(
+              header: true,
+              label: 'Welcome employee. Working here is like being a cactus.',
+              child: Text(
+                'Welcome, Employee! \nWorking here is like being a cactus 🌵😅',
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed:
-                  () => NavigationStack().push(
-                    context,
-                    AppRoutes.employee.profile,
-                  ),
-              child: const Text('Go to Profile'),
+            Semantics(
+              button: true,
+              label: 'Go to employee profile',
+              child: ElevatedButton(
+                onPressed:
+                    () => NavigationStack().push(
+                      context,
+                      AppRoutes.employee.profile,
+                    ),
+                child: const Text('Go to Profile'),
+              ),
             ),
           ],
         ),

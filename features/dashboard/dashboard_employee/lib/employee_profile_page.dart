@@ -12,6 +12,7 @@ class EmployeeProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Employee Profile'),
         leading: IconButton(
+          tooltip: 'Back',
           icon: const Icon(Icons.arrow_back),
           onPressed: () => NavigationStack().back(context),
         ),
@@ -20,19 +21,26 @@ class EmployeeProfilePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'This is your employee profile. \n I\'m a cactus!🌵🌵🌵🌵🌵🌵',
-              textAlign: TextAlign.center,
+            Semantics(
+              label: 'Employee profile details with decorative cactus emojis',
+              child: Text(
+                'This is your employee profile. \n I\'m a cactus!🌵🌵🌵🌵🌵🌵',
+                textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                // Log out in AuthService (also clears prefs)
-                authService.logout();
-                // Send user back to the login screen
-                NavigationStack().go(context, AppRoutes.login);
-              },
-              child: const Text('Logout'),
+            Semantics(
+              button: true,
+              label: 'Log out',
+              child: ElevatedButton(
+                onPressed: () async {
+                  // Log out in AuthService (also clears prefs)
+                  authService.logout();
+                  // Send user back to the login screen
+                  NavigationStack().go(context, AppRoutes.login);
+                },
+                child: const Text('Logout'),
+              ),
             ),
           ],
         ),

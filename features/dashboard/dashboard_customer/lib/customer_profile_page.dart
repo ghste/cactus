@@ -13,6 +13,7 @@ class CustomerProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Customer Profile'),
         leading: IconButton(
+          tooltip: 'Back',
           icon: const Icon(Icons.arrow_back),
           onPressed: () => NavigationStack().back(context),
         ),
@@ -21,16 +22,23 @@ class CustomerProfilePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('🌵🌵🌵🌵🌵🌵'),
+            Semantics(
+              label: 'Customer profile decorative cactus emojis',
+              child: Text('🌵🌵🌵🌵🌵🌵'),
+            ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                // Log out in AuthService (also clears prefs)
-                authService.logout();
-                // Send user back to the login screen
-                NavigationStack().go(context, AppRoutes.login);
-              },
-              child: const Text('Logout'),
+            Semantics(
+              button: true,
+              label: 'Log out',
+              child: ElevatedButton(
+                onPressed: () async {
+                  // Log out in AuthService (also clears prefs)
+                  authService.logout();
+                  // Send user back to the login screen
+                  NavigationStack().go(context, AppRoutes.login);
+                },
+                child: const Text('Logout'),
+              ),
             ),
           ],
         ),

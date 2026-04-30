@@ -24,9 +24,12 @@ class VendorDashboardPage extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Text(
-                        'Choose a cactus to promote',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Semantics(
+                        header: true,
+                        child: const Text(
+                          'Choose a cactus to promote',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                       const SizedBox(height: 12),
                       Wrap(
@@ -52,14 +55,17 @@ class VendorDashboardPage extends StatelessWidget {
                         onPressed:
                             viewModel.selectedCactus == null
                                 ? null
-                                : () => viewModel.promoteSelectedCactus(),
+                                : viewModel.promoteSelectedCactus,
                         child: const Text('Promote a Cactus'),
                       ),
                       if (viewModel.promotedCactus != null) ...[
                         const SizedBox(height: 12),
-                        Text(
-                          'Promoted: ${viewModel.promotedCactus}',
-                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        Semantics(
+                          liveRegion: true,
+                          child: Text(
+                            'Promoted: ${viewModel.promotedCactus}',
+                            style: const TextStyle(fontWeight: FontWeight.w600),
+                          ),
                         ),
                       ],
                     ],

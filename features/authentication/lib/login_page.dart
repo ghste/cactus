@@ -1,6 +1,6 @@
 // lib/login_page.dart
-import 'package:flutter/material.dart';
 import 'package:authentication/authentication.dart';
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,23 +20,26 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            const Text('Select a user type to log in as:'),
+            Semantics(
+              header: true,
+              child: const Text('Select a user type to log in as:'),
+            ),
             const SizedBox(height: 16),
             RadioGroup<UserType>(
               groupValue: _selectedType,
               onChanged: (UserType? val) => setState(() => _selectedType = val),
               child: Column(
-                children: [
+                children: const [
                   RadioListTile<UserType>(
-                    title: const Text('Vendor'),
+                    title: Text('Vendor'),
                     value: UserType.vendor,
                   ),
                   RadioListTile<UserType>(
-                    title: const Text('Employee'),
+                    title: Text('Employee'),
                     value: UserType.employee,
                   ),
                   RadioListTile<UserType>(
-                    title: const Text('Customer'),
+                    title: Text('Customer'),
                     value: UserType.customer,
                   ),
                 ],
