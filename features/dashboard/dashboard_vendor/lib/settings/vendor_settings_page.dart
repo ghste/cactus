@@ -21,7 +21,7 @@ class VendorSettingsPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'Settings for Vendor here. \nNothing to see yet, just more cacti 🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵',
+              'Settings for Vendor here. \nHere\'s more cacti 🌵🌵🌵🌵🌵🌵🌵🌵',
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),

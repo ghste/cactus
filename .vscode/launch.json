@@ -1,0 +1,148 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cactus",
+            "cwd": "cactus",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cactus (profile mode)",
+            "cwd": "cactus",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "cactus (release mode)",
+            "cwd": "cactus",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "authentication",
+            "cwd": "features/authentication",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "authentication (profile mode)",
+            "cwd": "features/authentication",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "authentication (release mode)",
+            "cwd": "features/authentication",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "core_router",
+            "cwd": "features/core_router",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "core_router (profile mode)",
+            "cwd": "features/core_router",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "core_router (release mode)",
+            "cwd": "features/core_router",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "core_ui",
+            "cwd": "features/core_ui",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "core_ui (profile mode)",
+            "cwd": "features/core_ui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "core_ui (release mode)",
+            "cwd": "features/core_ui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dashboard_customer",
+            "cwd": "features/dashboard/dashboard_customer",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dashboard_customer (profile mode)",
+            "cwd": "features/dashboard/dashboard_customer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dashboard_customer (release mode)",
+            "cwd": "features/dashboard/dashboard_customer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dashboard_employee",
+            "cwd": "features/dashboard/dashboard_employee",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dashboard_employee (profile mode)",
+            "cwd": "features/dashboard/dashboard_employee",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dashboard_employee (release mode)",
+            "cwd": "features/dashboard/dashboard_employee",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dashboard_vendor",
+            "cwd": "features/dashboard/dashboard_vendor",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dashboard_vendor (profile mode)",
+            "cwd": "features/dashboard/dashboard_vendor",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dashboard_vendor (release mode)",
+            "cwd": "features/dashboard/dashboard_vendor",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

@@ -1,32 +1,81 @@
 // packages/feature_dashboard_vendor/lib/src/view/vendor_dashboard_page.dart
 import 'package:core_router/core_router.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../view_model/vendor_dashboard_view_model.dart';
 
 class VendorDashboardPage extends StatelessWidget {
   const VendorDashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = context.watch<VendorDashboardViewModel>();
+
     return Scaffold(
       appBar: AppBar(title: const Text('Vendor Dashboard')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Cactus Inc. \nGrow the cactus. \nSell the cactus. \nProfit. \nGrow another cactus. 🌵😎',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed:
-                  () => NavigationStack().push(
-                    context,
-                    AppRoutes.vendor.settings,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            children: [
+              Expanded(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text(
+                        'Choose a cactus to promote',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 12),
+                      Wrap(
+                        spacing: 12,
+                        children: [
+                          for (
+                            var index = 0;
+                            index < viewModel.cactusOptions.length;
+                            index++
+                          )
+                            ChoiceChip(
+                              label: Text(
+                                viewModel.cactusOptions[index],
+                                style: const TextStyle(fontSize: 24),
+                              ),
+                              selected: viewModel.selectedIndex == index,
+                              onSelected: (_) => viewModel.selectCactus(index),
+                            ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed:
+                            viewModel.selectedCactus == null
+                                ? null
+                                : () => viewModel.promoteSelectedCactus(),
+                        child: const Text('Promote a Cactus'),
+                      ),
+                      if (viewModel.promotedCactus != null) ...[
+                        const SizedBox(height: 12),
+                        Text(
+                          'Promoted: ${viewModel.promotedCactus}',
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ],
                   ),
-              child: const Text('Go to Vendor Settings'),
-            ),
-          ],
+                ),
+              ),
+              ElevatedButton(
+                onPressed:
+                    () => NavigationStack().push(
+                      context,
+                      AppRoutes.vendor.settings,
+                    ),
+                child: const Text('Go to Vendor Settings'),
+              ),
+            ],
+          ),
         ),
       ),
     );
