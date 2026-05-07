@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 class VendorDashboardViewModel extends ChangeNotifier {
   final List<String> cactusOptions = const ['🌵', '🌵🌵', '🌵🌸'];
+  final List<double> cactusPrices = const [9.99, 19.99, 29.99];
 
   int? _selectedIndex;
   String? _promotedCactus;
@@ -10,6 +11,9 @@ class VendorDashboardViewModel extends ChangeNotifier {
 
   String? get selectedCactus =>
       _selectedIndex == null ? null : cactusOptions[_selectedIndex!];
+
+  double? get selectedPrice =>
+      _selectedIndex == null ? null : cactusPrices[_selectedIndex!];
 
   String? get promotedCactus => _promotedCactus;
 
