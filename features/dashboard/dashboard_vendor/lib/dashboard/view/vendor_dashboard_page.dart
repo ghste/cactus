@@ -68,12 +68,33 @@ class VendorDashboardPage extends StatelessWidget {
                         child: const Text('Promote a Cactus'),
                       ),
                       if (viewModel.promotedCactus != null) ...[
-                        const SizedBox(height: 12),
-                        Semantics(
-                          liveRegion: true,
-                          child: Text(
-                            'Promoted: ${viewModel.promotedCactus}',
-                            style: const TextStyle(fontWeight: FontWeight.w600),
+                        const SizedBox(height: 16),
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.green.shade50,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.green.shade200),
+                          ),
+                          child: Column(
+                            children: [
+                              const Text(
+                                'Promotion Summary',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text('Cactus: ${viewModel.promotedCactus}'),
+                              Text(
+                                'Promotion Cost: \$${viewModel.promotedPrice!.toStringAsFixed(2)}',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.green,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
