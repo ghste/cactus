@@ -1,4 +1,3 @@
-// packages/feature_dashboard_vendor/lib/src/view/vendor_dashboard_page.dart
 import 'package:core_router/core_router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,14 +41,24 @@ class VendorDashboardPage extends StatelessWidget {
                           )
                             ChoiceChip(
                               label: Text(
-                                viewModel.cactusOptions[index],
-                                style: const TextStyle(fontSize: 24),
+                                '${viewModel.cactusOptions[index]} \$${viewModel.cactusPrices[index].toStringAsFixed(2)}',
+                                style: const TextStyle(fontSize: 20),
                               ),
                               selected: viewModel.selectedIndex == index,
                               onSelected: (_) => viewModel.selectCactus(index),
                             ),
                         ],
                       ),
+                      if (viewModel.selectedPrice != null) ...[
+                        const SizedBox(height: 12),
+                        Text(
+                          'Price: \$${viewModel.selectedPrice!.toStringAsFixed(2)}',
+                          style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.orange,
+                          ),
+                        ),
+                      ],
                       const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed:
