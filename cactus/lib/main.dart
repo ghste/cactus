@@ -25,5 +25,5 @@ class MyApp extends StatelessWidget {
       routerConfig: router,
       title: 'Modular Flutter App',
     );
-  // 1 2 3 4 5
+  // 1 2 3 4 5 6
 }
