@@ -6,6 +6,7 @@ class VendorDashboardViewModel extends ChangeNotifier {
 
   int? _selectedIndex;
   String? _promotedCactus;
+  double? _promotedPrice;
 
   int? get selectedIndex => _selectedIndex;
 
@@ -16,6 +17,7 @@ class VendorDashboardViewModel extends ChangeNotifier {
       _selectedIndex == null ? null : cactusPrices[_selectedIndex!];
 
   String? get promotedCactus => _promotedCactus;
+  double? get promotedPrice => _promotedPrice;
 
   void selectCactus(int index) {
     if (index < 0 || index >= cactusOptions.length || index == _selectedIndex) {
@@ -32,6 +34,7 @@ class VendorDashboardViewModel extends ChangeNotifier {
     }
 
     _promotedCactus = selectedCactus;
+    _promotedPrice = selectedPrice;
     notifyListeners();
   }
 }
