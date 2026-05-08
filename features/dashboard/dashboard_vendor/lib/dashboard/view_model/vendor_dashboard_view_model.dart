@@ -1,6 +1,12 @@
+import 'package:database/database.dart';
 import 'package:flutter/foundation.dart';
 
 class VendorDashboardViewModel extends ChangeNotifier {
+  VendorDashboardViewModel({Database? database})
+    : _database = database ?? Database.instance;
+
+  final Database _database;
+
   final List<String> cactusOptions = const ['🌵', '🌵🌵', '🌵🌸'];
   final List<double> cactusPrices = const [9.99, 19.99, 29.99];
 
@@ -35,6 +41,9 @@ class VendorDashboardViewModel extends ChangeNotifier {
 
     _promotedCactus = selectedCactus;
     _promotedPrice = selectedPrice;
+    _database.savePromotion(
+      Promotion(cactus: _promotedCactus!, price: _promotedPrice!),
+    );
     notifyListeners();
   }
 }
