@@ -19,7 +19,9 @@ dependencies:
     path: ../../authentication
   core_ui:
     path: ../../core_ui
-    
+  database:
+    path: ../../database
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
