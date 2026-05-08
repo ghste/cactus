@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Await the asynchronous initialization of AuthService
-  // Comment 1.
+  // Comment 2.
   await initAuthService();
   await Database.instance.init();
 
