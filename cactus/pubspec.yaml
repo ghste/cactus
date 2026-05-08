@@ -42,6 +42,8 @@ dependencies:
     path: ../features/core_router
   core_ui:
     path: ../features/core_ui
+  database:
+    path: ../features/database
 
   url_strategy: ^0.3.0
   # The following adds the Cupertino Icons font to your application.
