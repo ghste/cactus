@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat ~/.graphite_user_config 2>/dev/null | head -40; echo \"---\"; cat /Users/gs/Projects/cactusapp/.graphite_repo_config 2>/dev/null | head -40)",
+      "Read(//Users/gs/**)"
+    ]
+  }
+}

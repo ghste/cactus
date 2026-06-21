@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gt --version)",
+      "Bash(gt sync *)",
+      "Bash(gt log *)",
+      "Bash(flutter analyze *)",
+      "Bash(git -C /Users/gs/Projects/cactusapp add features/core_ui/lib/core_ui.dart features/core_ui/lib/promotion_service.dart)",
+      "Bash(git -C /Users/gs/Projects/cactusapp diff --cached --stat)",
+      "Bash(gt create *)",
+      "Bash(git -C /Users/gs/Projects/cactusapp diff --stat)",
+      "Bash(git add *)",
+      "Bash(git -C /Users/gs/Projects/cactusapp remote -v)",
+      "Bash(gh auth *)",
+      "Bash(gt submit *)",
+      "Bash(gt checkout *)",
+      "Bash(flutter pub *)",
+      "Bash(git check-ignore *)",
+      "Bash(gt modify *)",
+      "Bash(git reset *)",
+      "Bash(git commit *)",
+      "Bash(gt restack *)",
+      "Bash(gt config *)",
+      "Bash(gt --help)"
+    ]
+  }
+}
